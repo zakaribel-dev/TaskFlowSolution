@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Sk8KkbBkTZFzspp6JjwSdHeINkHbo43Ab3nouLN3O/A=",
+  "Source": "TaskFlow.WebApi",
+  "BasePath": "_content/TaskFlow.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

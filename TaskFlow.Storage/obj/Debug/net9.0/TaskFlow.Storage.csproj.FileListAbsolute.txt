@@ -1,0 +1,17 @@
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\bin\Debug\net9.0\TaskFlow.Storage.deps.json
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\bin\Debug\net9.0\TaskFlow.Storage.runtimeconfig.json
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\bin\Debug\net9.0\TaskFlow.Storage.dll
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\bin\Debug\net9.0\TaskFlow.Storage.pdb
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\bin\Debug\net9.0\TaskFlow.Domain.dll
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\bin\Debug\net9.0\TaskFlow.Domain.pdb
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.csproj.AssemblyReference.cache
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.AssemblyInfoInputs.cache
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.AssemblyInfo.cs
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.csproj.CoreCompileInputs.cache
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.AA87484D.Up2Date
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.dll
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\refint\TaskFlow.Storage.dll
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.pdb
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.genruntimeconfig.cache
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\ref\TaskFlow.Storage.dll
