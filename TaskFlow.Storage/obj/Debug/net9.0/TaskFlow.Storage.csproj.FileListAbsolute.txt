@@ -15,3 +15,4 @@ C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\refint
 C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.pdb
 C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.genruntimeconfig.cache
 C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\ref\TaskFlow.Storage.dll
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.Storage\obj\Debug\net9.0\TaskFlow.Storage.sourcelink.json

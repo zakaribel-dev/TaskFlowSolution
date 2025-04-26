@@ -88,3 +88,4 @@ C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.WebApi\obj\Debug\net9.0\refint\
 C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.WebApi\obj\Debug\net9.0\TaskFlow.WebApi.pdb
 C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.WebApi\obj\Debug\net9.0\TaskFlow.WebApi.genruntimeconfig.cache
 C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.WebApi\obj\Debug\net9.0\ref\TaskFlow.WebApi.dll
+C:\Users\zakar\Desktop\TaskFlowSolution\TaskFlow.WebApi\obj\Debug\net9.0\TaskFlow.WebApi.sourcelink.json

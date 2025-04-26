@@ -1,4 +1,4 @@
-namespace TaskFlow.Domain.DTOs;
+namespace TaskFlow.WebApi.DTOs;
 
 public class ProjectUpdateDto
 {

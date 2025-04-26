@@ -13,7 +13,7 @@ public class UserService(IUserRepository repo, IConfiguration config) : IUserSer
     private readonly IUserRepository _repo = repo;
     private readonly IConfiguration _config = config;
 
-    public User Register(string name, string email, string password)
+    public User Register(string? name, string? email, string? password)
     {
         if (_repo.GetByEmail(email) is not null)
             throw new Exception("Email already in use.");
@@ -34,7 +34,7 @@ public class UserService(IUserRepository repo, IConfiguration config) : IUserSer
         return user;
     }
 
-    public string Login(string email, string password)
+    public string Login(string? email, string? password)
     {
         var user = _repo.GetByEmail(email) ?? throw new Exception("Invalid credentials.");
 

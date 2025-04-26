@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using TaskFlow.Domain.DTOs;
-using TaskFlow.Storage.Repositories;
+using TaskFlow.WebApi.DTOs;
 using TaskFlow.Domain.Entities;
 
 namespace TaskFlow.WebApi.Controllers;
@@ -10,23 +9,28 @@ namespace TaskFlow.WebApi.Controllers;
 [ApiController]
 [Route("api/projects")]
 [Authorize]
-public class ProjectsController(IProjectRepository projectRepo) : ControllerBase
+public class ProjectsController : ControllerBase
 {
-    private readonly IProjectRepository _projectRepo = projectRepo;
+    private readonly IProjectService _projectService;
+
+    public ProjectsController(IProjectService projectService)
+    {
+        _projectService = projectService;
+    }
 
     private int GetUserId() =>
         int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
     [HttpGet]
-    public IActionResult GetAll()
+    public async Task<IActionResult> GetAll()
     {
         var userId = GetUserId();
-        var projects = _projectRepo.GetByUserId(userId);
+        var projects = await _projectService.GetAllProjectsAsync(userId);
         return Ok(projects);
     }
 
     [HttpPost]
-    public IActionResult Create(ProjectCreateDto dto)
+    public async Task<IActionResult> Create(ProjectCreateDto dto)
     {
         var userId = GetUserId();
 
@@ -37,48 +41,36 @@ public class ProjectsController(IProjectRepository projectRepo) : ControllerBase
             UserId = userId
         };
 
-        _projectRepo.Add(project);
-        _projectRepo.SaveChanges();
-
-        return CreatedAtAction(nameof(GetById), new { id = project.Id }, project);
+        var createdProject = await _projectService.CreateProjectAsync(project, userId);
+        return CreatedAtAction(nameof(GetById), new { id = createdProject.Id }, createdProject);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById(int id)
+    public async Task<IActionResult> GetById(int id)
     {
-        var project = _projectRepo.GetById(id);
-        if (project == null) return NotFound();
-        if (project.UserId != GetUserId()) return Forbid();
-
+        var userId = GetUserId();
+        var project = await _projectService.GetProjectByIdAsync(id, userId);
         return Ok(project);
     }
 
     [HttpPut("{id}")]
-    public IActionResult Update(int id, ProjectUpdateDto dto)
+    public async Task<IActionResult> Update(int id, ProjectUpdateDto dto)
     {
-        var project = _projectRepo.GetById(id);
-        if (project == null) return NotFound();
-        if (project.UserId != GetUserId()) return Forbid();
+        var userId = GetUserId();
+        var project = await _projectService.GetProjectByIdAsync(id, userId);
 
         project.Name = dto.Name ?? string.Empty;
         project.Description = dto.Description;
 
-        _projectRepo.Update(project);
-        _projectRepo.SaveChanges();
-
+        await _projectService.UpdateProjectAsync(project, userId);
         return NoContent();
     }
 
     [HttpDelete("{id}")]
-    public IActionResult Delete(int id)
+    public async Task<IActionResult> Delete(int id)
     {
-        var project = _projectRepo.GetById(id);
-        if (project == null) return NotFound();
-        if (project.UserId != GetUserId()) return Forbid();
-
-        _projectRepo.Delete(id);
-        _projectRepo.SaveChanges();
-
+        var userId = GetUserId();
+        await _projectService.DeleteProjectAsync(id, userId);
         return NoContent();
     }
 }

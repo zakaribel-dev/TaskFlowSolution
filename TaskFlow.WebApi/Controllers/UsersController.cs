@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using TaskFlow.Domain.DTOs;
+using TaskFlow.WebApi.DTOs;
 using TaskFlow.WebApi.Services;
 
 namespace TaskFlow.WebApi.Controllers;

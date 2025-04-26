@@ -1,6 +1,6 @@
 using TaskFlow.Domain.Enums;
 
-namespace TaskFlow.Domain.DTOs;
+namespace TaskFlow.WebApi.DTOs;
 
 public class TaskCreateDto
 {

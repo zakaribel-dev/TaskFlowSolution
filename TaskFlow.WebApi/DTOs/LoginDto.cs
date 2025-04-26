@@ -1,5 +1,4 @@
-namespace TaskFlow.Domain.DTOs;
-
+namespace TaskFlow.WebApi.DTOs;
 public class LoginDto
 {
     public string? Email { get; set; }

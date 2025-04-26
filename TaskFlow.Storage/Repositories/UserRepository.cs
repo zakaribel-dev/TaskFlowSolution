@@ -13,7 +13,7 @@ public class UserRepository(TaskFlowDbContext context) : IUserRepository
     public User? GetById(int id) =>
         _context.Users.Include(u => u.Projects).FirstOrDefault(u => u.Id == id);
 
-    public User? GetByEmail(string email) =>
+    public User? GetByEmail(string? email) =>
         _context.Users.FirstOrDefault(u => u.Email.ToLower() == email.ToLower());
 
     public void Add(User entity) => _context.Users.Add(entity);
