@@ -60,11 +60,3 @@ Accéder à Swagger : [http://localhost:5020/swagger](http://localhost:5020/swag
 3. Cliquer sur "Authorize" dans Swagger, coller `Bearer {token}`
 4. Utiliser tous les endpoints protégés
 
-##  Bonnes pratiques respectées
-
-- Injection de dépendances
-- Séparation logique via services + interfaces
-- Middleware global de gestion des erreurs
-- Sérialisation enum + gestion des cycles JSON
-- Swagger bien documenté
-
