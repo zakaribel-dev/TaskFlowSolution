@@ -14,14 +14,18 @@ var builder = WebApplication.CreateBuilder(args);
 // ---------- Services ----------
 builder.Services.AddControllers()
     .AddJsonOptions(x =>
-    {
+
+    { // Un petit Ignorecycles histoire d'éviter les boucles infinies au niveau des objets liés entre eux comme Tasks et Projects..
         x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-        x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    // par défaut les enums sont en int alors on les converti pour afficher "AFaire" par exemple au lieu de 0
+        x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); 
     });
     
-builder.Services.AddEndpointsApiExplorer();
 
 // Swagger + JWT
+
+builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
@@ -33,7 +37,7 @@ builder.Services.AddSwaggerGen(options =>
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "JWT Authorization header using the Bearer scheme. Example: Bearer {token}",
+        Description = "Authorisation JWT. Pour chaque requête il faut préciser l'autorisation comme suit : Bearer {token}",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
@@ -62,8 +66,10 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<ITaskItemRepository, TaskItemRepository>();
 
-// Service d'auth
+// Services
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
 
 // Auth JWT
 var jwtKey = builder.Configuration["Jwt:Key"];

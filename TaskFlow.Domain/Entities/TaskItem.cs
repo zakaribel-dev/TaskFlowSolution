@@ -10,5 +10,5 @@ public class TaskItem
     public DateTime? DueDate { get; set; }
     public int ProjectId { get; set; }
     public Project Project { get; set; }
-            public string Commentaires { get; set; } = ""; 
+    public string Commentaires { get; set; } = ""; 
 }

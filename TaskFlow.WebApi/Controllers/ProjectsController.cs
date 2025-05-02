@@ -42,7 +42,9 @@ public class ProjectsController : ControllerBase
         };
 
         var createdProject = await _projectService.CreateProjectAsync(project, userId);
-        return CreatedAtAction(nameof(GetById), new { id = createdProject.Id }, createdProject);
+
+        // createdAtAction = renvoie c'qui a été created + code 201 , le premier param attend le nom en string d'où mle nameof
+        return CreatedAtAction(nameof(GetById), new { id = createdProject.Id }, createdProject); 
     }
 
     [HttpGet("{id}")]
